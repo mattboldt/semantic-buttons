@@ -1,6 +1,7 @@
 body {
   background: -webkit-linear-gradient(top, white, #f8f8f8);
   background-attachment: fixed;
+  color: #333;
   font-family: "Myriad Pro", sans-serif;
   text-shadow: #fff 0px 1px 0px; }
 
@@ -14,9 +15,7 @@ h1, h2, h3 {
   font-weight: 600; }
 
 h1 {
-  color: #333;
   font-size: 3em;
-  font-weight: 600;
   text-shadow: #999 0px 1px 3px; }
 
 .wrap {
@@ -101,6 +100,9 @@ h1 {
 .btn-green a {
   background-color: #33BF39; }
 
+.btn-orange a {
+  background-color: #FF7700; }
+
 .btn-block {
   display: block;
   margin: 0; }
@@ -115,7 +117,7 @@ h1 {
 
 /* ------- TOOLTIP STYLES ------- */
 .btn-tooltip a {
-  z-index: 999999; }
+  z-index: 9999; }
 .btn-tooltip .tooltip {
   display: block;
   position: absolute;
@@ -150,4 +152,4 @@ h1 {
 .btn-tooltip .init-btn-tooltip {
   bottom: 75px;
   opacity: 1;
-  z-index: 9999; }
+  z-index: 999; }

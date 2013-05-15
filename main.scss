@@ -2,6 +2,7 @@
 body{
 	background:-webkit-linear-gradient(top, #fff, #f8f8f8);
 	background-attachment: fixed;
+	color:#333;
 	font-family: "Myriad Pro", sans-serif;
 	text-shadow:#fff 0px 1px 0px;
 }
@@ -13,9 +14,7 @@ p{
 }
 h1,h2,h3{font-weight: 600;}
 h1{
-	color:#333;
 	font-size: 3em;
-	font-weight: 600;
 	text-shadow:#999 0px 1px 3px;
 }
 .wrap{
@@ -127,6 +126,11 @@ h1{
 			background-color:#33BF39;
 		}
 	}
+	.btn-orange{
+		a{
+			background-color:#FF7700;
+		}
+	}
 	.btn-block{
 		display: block;
 		margin:0;
@@ -144,53 +148,53 @@ h1{
 	}
 
 
-	/* ------- TOOLTIP STYLES ------- */
-	.btn-tooltip{
-		a {
-			z-index:999999;
-		}
-	
-		.tooltip{
-			display: block;
+/* ------- TOOLTIP STYLES ------- */
+.btn-tooltip{
+	a {
+		z-index:9999;
+	}
+
+	.tooltip{
+		display: block;
+		position: absolute;
+		margin:auto;
+		width:100%;
+		bottom:0px;
+		padding:20px 0;
+		opacity:0;
+		background-color:#333;
+		background-image:-webkit-linear-gradient(top, #333, #222);
+		box-shadow:rgba(0,0,0,0.2) 0px 1px 15px, inset rgba(255,255,255,0.3) 0px 1px 0px;
+		border:rgb(0,0,0) 1px solid;
+		border-radius:5px;
+		color:#fff;
+		text-align: center;
+		text-shadow:#000 0px -1px 0px;
+		z-index:0;
+		-webkit-transition:all 0.1s ease-in-out;
+
+		&:before, &:after{
+			content: "";
 			position: absolute;
-			margin:auto;
-			width:100%;
-			bottom:0px;
-			padding:20px 0;
-			opacity:0;
-			background-color:#333;
-			background-image:-webkit-linear-gradient(top, #333, #222);
-			box-shadow:rgba(0,0,0,0.2) 0px 1px 15px, inset rgba(255,255,255,0.3) 0px 1px 0px;
-			border:rgb(0,0,0) 1px solid;
-			border-radius:5px;
-			color:#fff;
-			text-align: center;
-			text-shadow:#000 0px -1px 0px;
-			z-index:0;
-			-webkit-transition:all 0.1s ease-in-out;
-
-			&:before, &:after{
-				content: "";
-				position: absolute;
-				bottom:-10px;
-				left:50%;
-				margin-left:-10px;
-				display: block;
-				border-left:transparent 10px solid;
-				border-right:transparent 10px solid;
-				border-top: #222 10px solid;
-			}
-			&:before{
-				border-top: rgb(0,0,0) 10px solid;
-				bottom:-11px;
-			}
+			bottom:-10px;
+			left:50%;
+			margin-left:-10px;
+			display: block;
+			border-left:transparent 10px solid;
+			border-right:transparent 10px solid;
+			border-top: #222 10px solid;
 		}
-
-		// ADD INITIALIZE TOOLTIP W/ JQUERY
-			.init-btn-tooltip{
-				bottom:75px;
-				opacity:1;
-				z-index:9999;
-			}
+		&:before{
+			border-top: rgb(0,0,0) 10px solid;
+			bottom:-11px;
 		}
+	}
+
+	// ADD INITIALIZE TOOLTIP W/ JQUERY
+		.init-btn-tooltip{
+			bottom:75px;
+			opacity:1;
+			z-index:999;
+		}
+	}
 		

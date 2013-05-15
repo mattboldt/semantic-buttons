@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="main.css" rel="stylesheet" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+$(function(){
+	$("a[href=#]").click(function(e){
+		e.preventDefault();
+	});
+
+	$(".btn-tooltip").hover(function(){
+		$(this).parent().find(".tooltip").addClass("init-btn-tooltip");
+	}, function(){
+		$(this).parent().find(".tooltip").removeClass("init-btn-tooltip");
+	});
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+	
+	<div class="wrap">
+
+		<div class="header">
+			<h1>Button Semantics</h1>
+			<p><em>a good way to lay out buttons in HTML and CSS</em></p>
+		</div>
+		
+		<div class="btn-wrap btn-center">
+			<div class="btn">
+				<a href="#">Download Now</a>
+				<p>For <a href="#">Mac</a> and <a href="#">Windows</a></p>
+			</div>
+			<div class="btn btn-blue txt-center">
+				<a href="#">Buy Now</a>
+				<p>It's real cheap</p>
+			</div>
+			<div class="btn btn-green txt-center btn-tooltip">
+				<div class="tooltip">
+					Click here to learn more!
+				</div>
+				<a href="#">Learn More</a>
+			</div>
+		</div>
+
+
+		<div class="info-wrap">
+			<h3>Want to learn more about this demo?</h3>
+			<p>Click here to see the blog post about semantic buttons on mattboldt.com.
+				It's a great article! I promise you'll learn a lot.</p>
+
+
+			<div class="btn btn-block">
+				<a href="http://www.mattboldt.com/semantic-css-buttons/">See the blog post</a>
+			</div>
+		</div>
+		<div class="info-wrap">
+			<h3>View on Github</h3>
+			<p>Click here to see the code on Github. These buttons are written in
+				Sass, a very cool CSS proprocessor made with Ruby.</p>
+
+
+			<div class="btn btn-blue btn-block">
+				<a href="http://www.github.com/mattboldt/">View on Github</a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+</body>
+</html>

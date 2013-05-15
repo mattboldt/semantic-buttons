@@ -31,7 +31,12 @@ h1{
 		margin:0 auto
 	}
 }
-
+.disclaimer{
+	color:#CCC;
+	text-align: center;
+	font-size: 0.8em;
+	font-weight:400;
+}
 .info-wrap{
 	display: inline-block;
 	width:450px;
@@ -58,6 +63,7 @@ h1{
 .btn-wrap{
 	display: block;
 	margin:0 auto 1em;
+	clear:both;
 }
 	
 	/* ------ BASE BUTTON CLASS ------ */
@@ -146,6 +152,12 @@ h1{
 			text-align: center;
 		}
 	}
+	.txt-right{
+		text-align: right;
+		p, span{
+			text-align: right;
+		}
+	}
 
 
 /* ------- TOOLTIP STYLES ------- */
@@ -159,7 +171,7 @@ h1{
 		position: absolute;
 		margin:auto;
 		width:100%;
-		bottom:0px;
+		top:0px;
 		padding:20px 0;
 		opacity:0;
 		background-color:#333;
@@ -192,7 +204,7 @@ h1{
 
 	// ADD INITIALIZE TOOLTIP W/ JQUERY
 		.init-btn-tooltip{
-			bottom:75px;
+			top:-75px;
 			opacity:1;
 			z-index:999;
 		}

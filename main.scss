@@ -1,6 +1,22 @@
 
+// $dir = Direction. Top, bottom, left, right
+// $basecolor = Base color of the button
+// $h1 = Lighten gradient amount
+// $lo = Darken gradient amount
+@mixin background-gradient($dir, $basecolor, $hi, $lo){
+	background-color:$basecolor;
+	background-image: -webkit-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
+	background-image: -moz-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
+	background-image: -ms-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
+	background-image: -o-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
+	background-image: linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
+}
+
 body{
-	background:-webkit-linear-gradient(top, #fff, #f8f8f8);
+	background:-webkit-radial-gradient(center, #fff 30%, #CCC);
+		background:-moz-radial-gradient(center, #fff 30%, #CCC);
+			background:-ms-radial-gradient(center, #fff 30%, #CCC);
+				background:radial-gradient(center, #fff 30%, #CCC);
 	background-attachment: fixed;
 	color:#333;
 	font-family: "Myriad Pro", sans-serif;
@@ -14,7 +30,10 @@ p{
 }
 h1,h2,h3{font-weight: 600;}
 h1{
-	font-size: 3em;
+	margin:0;
+	padding:0;
+	line-height: .8em;
+	font-size: 4em;
 	text-shadow:#999 0px 1px 3px;
 }
 .wrap{
@@ -22,13 +41,15 @@ h1{
 	max-width:1000px;
 }
 .header{
-	margin:4em auto;
+	margin:4em auto 5em;
 	text-align: center;
 	h1{
 		margin:1em auto 0;
+		color:#333;
+		text-shadow:#666 0px 2px 3px;
 	}
 	p{
-		margin:0 auto
+		margin:0 auto 0;
 	}
 }
 .disclaimer{
@@ -58,6 +79,8 @@ h1{
 	max-width:600px;
 	margin:auto;
 }
+
+
 
 /* ------ BUTTON WRAPPER FOR POSITIONING CONTROL ------ */
 .btn-wrap{
@@ -89,8 +112,9 @@ h1{
 			line-height: 1em;
 			text-align: center;
 			text-shadow:rgba(0,0,0,0.5) 0px 1px 2px;
-			background-color:#CCC;
-			background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
+			$basecolor: #CCC;
+			background-color:$basecolor;
+			@include background-gradient(top, $basecolor, 10%, 10%);
 			border-radius:4px;
 			box-shadow:
 				inset rgba(255,255,255,0.6) 0px 1px 0px,
@@ -98,13 +122,13 @@ h1{
 				rgba(0,0,0,0.5) 0px 1px 5px,
 				rgba(0,0,0,0.5) 0px 0px 0px 1px;
 			&:hover{
-				background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(0,0,0,0.1));
+				@include background-gradient(top, $basecolor, 15%, 10%);
 			}
 			&:active{
 				text-shadow:rgba(0,0,0,0.3) 0px 0px 2px;
-				background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
 				box-shadow:
 					inset rgba(0,0,0,0.5) 0px 1px 4px;
+				@include background-gradient(top, $basecolor, 5%, 10%);
 			}
 			z-index:0;
 		}
@@ -123,20 +147,24 @@ h1{
 	
 	/* ------ BUTTON STYLE VARIATIONS ------- */
 	.btn-blue{
-		a{
-			background-color:#34A2FF;
+		a{ $basecolor:#34A2FF; @include background-gradient(top, $basecolor, 10%, 10%);
+			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
+			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
 		}
 	}
 	.btn-green{
-		a{
-			background-color:#33BF39;
+		a{ $basecolor:#33BF39; @include background-gradient(top, $basecolor, 10%, 10%);
+			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
+			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
 		}
 	}
 	.btn-orange{
-		a{
-			background-color:#FF7700;
+		a{ $basecolor:#FF7700; @include background-gradient(top, $basecolor, 10%, 10%);
+			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
+			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
 		}
 	}
+
 	.btn-block{
 		display: block;
 		margin:0;
@@ -184,6 +212,9 @@ h1{
 		text-shadow:#000 0px -1px 0px;
 		z-index:0;
 		-webkit-transition:all 0.1s ease-in-out;
+		-moz-transition:all 0.1s ease-in-out;
+		-ms-transition:all 0.1s ease-in-out;
+		transition:all 0.1s ease-in-out;
 
 		&:before, &:after{
 			content: "";

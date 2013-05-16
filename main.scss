@@ -1,17 +1,8 @@
 
-// $dir = Direction. Top, bottom, left, right
-// $basecolor = Base color of the button
-// $h1 = Lighten gradient amount
-// $lo = Darken gradient amount
-@mixin background-gradient($dir, $basecolor, $hi, $lo){
-	background-color:$basecolor;
-	background-image: -webkit-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
-	background-image: -moz-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
-	background-image: -ms-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
-	background-image: -o-linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
-	background-image: linear-gradient($dir, lighten($basecolor, $hi), darken($basecolor, $lo));
-}
+@import "base";
+@import "buttons";
 
+/* ----- BODY STYLES ----- */
 body{
 	background:-webkit-radial-gradient(center, #fff 30%, #CCC);
 		background:-moz-radial-gradient(center, #fff 30%, #CCC);
@@ -22,42 +13,45 @@ body{
 	font-family: "Myriad Pro", sans-serif;
 	text-shadow:#fff 0px 1px 0px;
 }
-a{
-	text-decoration: none;
-}
-p{
-	line-height: 1.75em;
-}
-h1,h2,h3{font-weight: 600;}
-h1{
-	margin:0;
-	padding:0;
-	line-height: .8em;
-	font-size: 4em;
-	text-shadow:#999 0px 1px 3px;
-}
-.wrap{
-	margin: auto;
-	max-width:1000px;
-}
-.header{
-	margin:4em auto 5em;
-	text-align: center;
-	h1{
-		margin:1em auto 0;
-		color:#333;
-		text-shadow:#666 0px 2px 3px;
+	a{
+		text-decoration: none;
 	}
 	p{
-		margin:0 auto 0;
+		line-height: 1.75em;
 	}
-}
-.disclaimer{
-	color:#CCC;
-	text-align: center;
-	font-size: 0.8em;
-	font-weight:400;
-}
+	h1,h2,h3{font-weight: 600;}
+	h1{
+		margin:0;
+		padding:0;
+		line-height: .8em;
+		font-size: 4em;
+		text-shadow:#999 0px 1px 3px;
+	}
+	.wrap{
+		margin: auto;
+		max-width:1000px;
+	}
+	.header{
+		margin:4em auto 5em;
+		text-align: center;
+		h1{
+			margin:1em auto 0;
+			color:#333;
+			text-shadow:#666 0px 2px 3px;
+		}
+		p{
+			margin:0 auto 0;
+		}
+	}
+	.disclaimer{
+		color:#CCC;
+		text-align: center;
+		font-size: 0.8em;
+		font-weight:400;
+	}
+
+/* ----- DEMO CONTENT STYLES ----- */
+
 .info-wrap{
 	display: inline-block;
 	width:450px;
@@ -80,164 +74,3 @@ h1{
 	margin:auto;
 }
 
-
-
-/* ------ BUTTON WRAPPER FOR POSITIONING CONTROL ------ */
-.btn-wrap{
-	display: block;
-	margin:0 auto 1em;
-	clear:both;
-}
-	
-	/* ------ BASE BUTTON CLASS ------ */
-	.btn{
-		display: inline-block;
-		position: relative;
-		margin:0 10px;
-		text-align: left;
-		vertical-align: top;
-
-		// spreads button 100% of container
-		@media screen and (max-width:500px){
-			display:block;
-		}
-
-		& > a{
-			display: block;
-			position: relative;
-			padding:0.8em 1.75em 0.7em;
-			color:#fff;
-			font-size: 1.5em;
-			font-weight: 600;
-			line-height: 1em;
-			text-align: center;
-			text-shadow:rgba(0,0,0,0.5) 0px 1px 2px;
-			$basecolor: #CCC;
-			background-color:$basecolor;
-			@include background-gradient(top, $basecolor, 10%, 10%);
-			border-radius:4px;
-			box-shadow:
-				inset rgba(255,255,255,0.6) 0px 1px 0px,
-				inset rgba(0,0,0,0.2) 0px -1px 0px,
-				rgba(0,0,0,0.5) 0px 1px 5px,
-				rgba(0,0,0,0.5) 0px 0px 0px 1px;
-			&:hover{
-				@include background-gradient(top, $basecolor, 15%, 10%);
-			}
-			&:active{
-				text-shadow:rgba(0,0,0,0.3) 0px 0px 2px;
-				box-shadow:
-					inset rgba(0,0,0,0.5) 0px 1px 4px;
-				@include background-gradient(top, $basecolor, 5%, 10%);
-			}
-			z-index:0;
-		}
-
-
-		p{
-			line-height: 1em;
-			a{
-				color:#34A2FF;
-				&:hover{
-					color:darken(#34A2FF, 20%);
-				}
-			}
-		}
-	}
-	
-	/* ------ BUTTON STYLE VARIATIONS ------- */
-	.btn-blue{
-		a{ $basecolor:#34A2FF; @include background-gradient(top, $basecolor, 10%, 10%);
-			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
-			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
-		}
-	}
-	.btn-green{
-		a{ $basecolor:#33BF39; @include background-gradient(top, $basecolor, 10%, 10%);
-			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
-			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
-		}
-	}
-	.btn-orange{
-		a{ $basecolor:#FF7700; @include background-gradient(top, $basecolor, 10%, 10%);
-			&:hover{ @include background-gradient(top, $basecolor, 15%, 10%); }
-			&:active{ @include background-gradient(top, $basecolor, 5%, 10%); }
-		}
-	}
-
-	.btn-block{
-		display: block;
-		margin:0;
-	}
-	.btn-center{
-		text-align: center;
-	}
-
-	// for button descriptions
-	.txt-center{
-		text-align: center;
-		p, span{
-			text-align: center;
-		}
-	}
-	.txt-right{
-		text-align: right;
-		p, span{
-			text-align: right;
-		}
-	}
-
-
-/* ------- TOOLTIP STYLES ------- */
-.btn-tooltip{
-	a {
-		z-index:9999;
-	}
-
-	.tooltip{
-		display: block;
-		position: absolute;
-		margin:auto;
-		width:100%;
-		top:0px;
-		padding:20px 0;
-		opacity:0;
-		background-color:#333;
-		background-image:-webkit-linear-gradient(top, #333, #222);
-		box-shadow:rgba(0,0,0,0.2) 0px 1px 15px, inset rgba(255,255,255,0.3) 0px 1px 0px;
-		border:rgb(0,0,0) 1px solid;
-		border-radius:5px;
-		color:#fff;
-		text-align: center;
-		text-shadow:#000 0px -1px 0px;
-		z-index:0;
-		-webkit-transition:all 0.1s ease-in-out;
-		-moz-transition:all 0.1s ease-in-out;
-		-ms-transition:all 0.1s ease-in-out;
-		transition:all 0.1s ease-in-out;
-
-		&:before, &:after{
-			content: "";
-			position: absolute;
-			bottom:-10px;
-			left:50%;
-			margin-left:-10px;
-			display: block;
-			border-left:transparent 10px solid;
-			border-right:transparent 10px solid;
-			border-top: #222 10px solid;
-		}
-		&:before{
-			border-top: rgb(0,0,0) 10px solid;
-			bottom:-11px;
-		}
-	}
-
-	// ADD INITIALIZE TOOLTIP W/ JQUERY
-		.init-btn-tooltip{
-			top:-75px;
-			opacity:1;
-			z-index:999;
-		}
-	}
-		

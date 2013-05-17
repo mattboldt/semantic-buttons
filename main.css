@@ -1,14 +1,8 @@
-/* ----- SASS MIXINS & VARIABLES ----- */
-/* ----------------------------------------------------
-------------------- SEMANTIC BUTTONS ------------------
------------------------------------------------------ */
-/* ------ BUTTON WRAPPER FOR POSITIONING CONTROL ------ */
 .btn-wrap {
   display: block;
   margin: 0 auto 1em;
   clear: both; }
 
-/* ------ BASE BUTTON CLASS ------ */
 .btn {
   display: inline-block;
   position: relative;
@@ -61,7 +55,6 @@
       .btn p a:hover {
         color: #80c5ff; }
 
-/* ------ BUTTON STYLE VARIATIONS ------- */
 .btn-blue a {
   background-color: #34a2ff;
   background-image: -webkit-linear-gradient(top, #67b9ff, #018bff);
@@ -145,7 +138,6 @@
   .txt-right p, .txt-right span {
     text-align: right; }
 
-/* ------- TOOLTIP STYLES ------- */
 .btn-tooltip a {
   z-index: 9999; }
 .btn-tooltip .tooltip {

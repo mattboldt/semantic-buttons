@@ -1,16 +1,16 @@
-/* ----------------------------------------------------
-------------------- SEMANTIC BUTTONS ------------------
------------------------------------------------------ */
+// ----------------------------------------------------
+// ------------------- SEMANTIC BUTTONS ---------------
+// ----------------------------------------------------
 
 
-/* ------ BUTTON WRAPPER FOR POSITIONING CONTROL ------ */
+// ------ BUTTON WRAPPER FOR POSITIONING CONTROL ------ //
 .btn-wrap{
 	display: block;
 	margin:0 auto 1em;
 	clear:both;
 }
 	
-	/* ------ BASE BUTTON CLASS ------ */
+	// ------ BASE BUTTON CLASS ------ //
 	.btn{
 		display: inline-block;
 		position: relative;
@@ -66,7 +66,7 @@
 		}
 	}
 	
-	/* ------ BUTTON STYLE VARIATIONS ------- */
+	// ------ BUTTON STYLE VARIATIONS ------- //
 	.btn-blue{
 		a{ $basecolor:#34A2FF; @include btn-gradient(top, $basecolor, 10%, 10%);
 			&:hover{ @include btn-gradient(top, $basecolor, 15%, 10%); }
@@ -109,7 +109,7 @@
 	}
 
 
-/* ------- TOOLTIP STYLES ------- */
+// ------- TOOLTIP STYLES ------- //
 .btn-tooltip{
 	a {
 		z-index:9999;

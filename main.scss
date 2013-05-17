@@ -2,7 +2,7 @@
 @import "base";
 @import "buttons";
 
-/* ----- BODY STYLES ----- */
+// ----- BODY STYLES ----- //
 body{
 	background:-webkit-radial-gradient(center, #fff 30%, #CCC);
 		background:-moz-radial-gradient(center, #fff 30%, #CCC);
@@ -50,7 +50,7 @@ body{
 		font-weight:400;
 	}
 
-/* ----- DEMO CONTENT STYLES ----- */
+// ----- DEMO CONTENT STYLES ----- //
 
 .info-wrap{
 	display: inline-block;

@@ -179,7 +179,6 @@
   opacity: 1;
   z-index: 999; }
 
-/* ----- BODY STYLES ----- */
 body {
   background: -webkit-radial-gradient(center, white 30%, #cccccc);
   background: -moz-radial-gradient(center, white 30%, #cccccc);
@@ -226,7 +225,6 @@ h1 {
   font-size: 0.8em;
   font-weight: 400; }
 
-/* ----- DEMO CONTENT STYLES ----- */
 .info-wrap {
   display: inline-block;
   width: 450px;

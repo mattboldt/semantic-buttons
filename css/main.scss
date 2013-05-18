@@ -1,6 +1,6 @@
-
+// ----- IMPORT VARIABLES AND MIXINS ------ //
 @import "base";
-@import "buttons";
+
 
 // ----- BODY STYLES ----- //
 body{
@@ -73,4 +73,9 @@ body{
 	max-width:600px;
 	margin:auto;
 }
+
+
+// ------ IMPORT BUTTON STYLES ------ //
+
+@import "buttons";
 
